@@ -5,17 +5,17 @@ from tkinter import messagebox, filedialog
 def to_vigenere(plaintext, key):
     """Encrypt the plaintext using Vigenere cipher."""
     ans = ""
-    key = key.lower()
+    key = key.lower()   #stored in lower
     for i in range(len(plaintext)):
         ch = plaintext[i]
         if ch == " ":
-            ans += " "
+            ans += " "   #stores in the 
         elif ch.isupper():
             ans += chr((ord(ch) + ord(key[i % len(key)]) - 65) % 26 + 65)
         else:
             ans += chr((ord(ch) + ord(key[i % len(key)]) - 97) % 26 + 97)
     return ans
-
+# decryption tool for vigener 
 def from_vigenere(ciphertext, key):
     """Decrypt the ciphertext using Vigenere cipher."""
     ans = ""
@@ -95,7 +95,7 @@ class EncryptionApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Cryptsafe Local")
-        self.root.geometry("600x500")  # Window size for the app
+        self.root.geometry("800x600")  # Window size for the app
         self.main_menu()
 
     def main_menu(self):
@@ -113,7 +113,7 @@ class EncryptionApp:
     def password_encrypt(self):
         """Function to handle password encryption logic based on selected method."""
         self.clear_frame()
-        tk.Label(self.root, text="Enter Text for Encryption/Decryption", font=("Helvetica", 14)).pack(pady=10)
+        tk.Label(self.root, text="Enter Text for Encryption/Decryption", font=("Helvetica", 14)).pack(pady=20)
         self.input_text = tk.Text(self.root, width=60, height=10, font=("Helvetica", 12))
         self.input_text.pack(pady=10)
 
@@ -121,7 +121,7 @@ class EncryptionApp:
         self.key_entry = tk.Entry(self.root, font=("Helvetica", 12), show="*")
         self.key_entry.pack(pady=5)
 
-        tk.Button(self.root, text="Encrypt", font=("Helvetica", 12), command=self.perform_password_encrypt).pack(pady=10)
+        tk.Button(self.root, text="Encrypt", font=("Helvetica", 12), command=self.perform_password_encrypt).pack(pady=20)
         tk.Button(self.root, text="Decrypt", font=("Helvetica", 12), command=self.perform_password_decrypt).pack(pady=10)
         
         tk.Button(self.root, text="Save to File", font=("Helvetica", 12), command=self.save_to_file).pack(pady=10)
