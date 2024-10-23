@@ -23,9 +23,9 @@ root.resizable(0, 0)
 root.title('Login Page')
 
 # Ensure the image files are found
-image_path = '1.new.JPG'
-eye_image_path = 'openeye.png'
-close_eye_image_path = 'close image.png'
+image_path = 'login page/1.new.JPG'
+eye_image_path = 'login page/openeye.png'
+close_eye_image_path = 'login page/close image.png'
 
 if not os.path.exists(image_path) or not os.path.exists(eye_image_path) or not os.path.exists(close_eye_image_path):
     print(f"Error: One or more image files do not exist. Make sure {image_path}, {eye_image_path}, and {close_eye_image_path} are in the correct directory.")
